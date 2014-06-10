@@ -1,0 +1,16 @@
+<?php
+/**
+* Implements hook_views_query_alter
+*
+* @param type $view
+* @param type $query
+*/
+function views_patch_views_query_alter(&$view, &$query) {
+  // Fix bug where multiple terms in search index filter returns no results
+  if (isset($query->relationships['search_total'])
+      && !empty($query->fields['score'])
+      && empty($query->fields['score']['table'])) {
+    $query->fields['score']['table'] = 'search_total';
+  }
+}
+?>
