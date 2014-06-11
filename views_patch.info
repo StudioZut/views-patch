@@ -1,4 +1,5 @@
 name = Views Patch
 description = Patch for issues with views search:search terms filter for views not working with 2 or more words https://drupal.org/node/1948510
+version = 7.x-1.0-beta1
 core = 7.x
 package = GW Libraries
