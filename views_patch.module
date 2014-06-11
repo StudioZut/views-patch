@@ -13,4 +13,3 @@ function views_patch_views_query_alter(&$view, &$query) {
     $query->fields['score']['table'] = 'search_total';
   }
 }
-?>
